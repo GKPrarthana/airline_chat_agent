@@ -63,7 +63,7 @@ def ask_openai(prompt: str) -> str:
     # Handle flight booking
     if all(k in prompt_lower for k in ["book", "flight", "from", "to", "on"]):
         print("Booking intent detected!")
-        departure, destination, date = clean_param(extract_flight_details(prompt))
+        departure, destination, date = extract_flight_details(prompt)
 
         if not all([departure, destination, date]):
             return "Please provide booking details in this format: 'Book flight from LK to LA on 2025-06-10'"
@@ -73,12 +73,13 @@ def ask_openai(prompt: str) -> str:
         flight = results[0]
         return (
             f"Found flight {flight[4]} on {date} at {flight[5]}.\n"
-            "Please provide your **name** and **email** to complete the booking."
+            "Please provide your name and email to complete the booking."
         )
 
     # Handle general flight search
     if all(k in prompt_lower for k in ["flight", "from", "to", "on"]):
         departure, destination, date = extract_flight_details(prompt)
+
         if not all([departure, destination, date]):
             return "Please use the format: 'flight from XXX to YYY on YYYY-MM-DD'."
         results = get_flights(departure, destination, date)
