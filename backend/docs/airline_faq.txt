@@ -1,0 +1,8 @@
+Baggage Policy:
+- For international flights, each passenger is allowed 2 bags of 23kg each.
+
+Cancellation Policy:
+- You can cancel up to 24 hours before departure and get a full refund.
+
+Check-in:
+- Online check-in opens 24 hours before the flight and closes 2 hours prior.

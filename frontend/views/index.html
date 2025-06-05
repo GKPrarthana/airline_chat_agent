@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airline Chat Agent</title>
+  <style>
+    body { font-family: Arial; margin: 30px; }
+    #chat { max-width: 600px; margin: auto; }
+    .bubble { padding: 10px; border-radius: 8px; margin: 10px 0; }
+    .user { background: #d1e7dd; text-align: right; }
+    .bot { background: #f8d7da; text-align: left; }
+  </style>
+</head>
+<body>
+  <div id="chat">
+    <div class="bubble bot">Hi! I’m your airline assistant. How can I help?</div>
+  </div>
+  <input type="text" id="input" placeholder="Ask something..." style="width: 80%;" />
+  <button onclick="sendMessage()">Send</button>
+
+  <script src="/script.js"></script>
+</body>
+</html>
