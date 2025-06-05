@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Airline Chat Agent</title>
-  <style>
-    body { font-family: Arial; margin: 30px; }
-    #chat { max-width: 600px; margin: auto; }
-    .bubble { padding: 10px; border-radius: 8px; margin: 10px 0; }
-    .user { background: #d1e7dd; text-align: right; }
-    .bot { background: #f8d7da; text-align: left; }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div id="chat">
-    <div class="bubble bot">Hi! I’m your airline assistant. How can I help?</div>
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white shadow-xl rounded-2xl p-6 max-w-xl w-full">
+    <h1 class="text-2xl font-bold text-blue-700 mb-4 text-center">✈️ Airline Chat Agent</h1>
+    
+    <div id="chat" class="space-y-4 max-h-96 overflow-y-auto mb-4">
+      <div class="bg-blue-100 text-blue-800 p-3 rounded-xl w-fit max-w-xs">Hi! I’m your airline assistant. How can I help?</div>
+    </div>
+
+    <div class="flex space-x-2">
+      <input id="input" type="text" placeholder="Ask something..." 
+             class="flex-1 p-2 rounded-xl border border-blue-300 focus:ring focus:ring-blue-200" />
+      <button onclick="sendMessage()" 
+              class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">Send</button>
+    </div>
   </div>
-  <input type="text" id="input" placeholder="Ask something..." style="width: 80%;" />
-  <button onclick="sendMessage()">Send</button>
 
   <script src="/script.js"></script>
 </body>
