@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
-from backend.services.openai_service import ask_openai
+from backend.services.openai_service import ask_agent
 
 app = FastAPI()
 
@@ -9,5 +9,5 @@ class Message(BaseModel):
 
 @app.post("/chat")
 def chat(msg: Message):
-    response = ask_openai(msg.user_input)
-    return {"response": response}
+    response_message, _ = ask_agent(msg.user_input) # ask_agent returns (message, history)
+    return {"response": response_message}
